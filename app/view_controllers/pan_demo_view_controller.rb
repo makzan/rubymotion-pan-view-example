@@ -22,6 +22,13 @@ class PanDemoViewController < UIViewController
     panGesture = UIPanGestureRecognizer.alloc.initWithTarget self, action: "pan:"
     
     self.view.addGestureRecognizer panGesture
+    
+    
+    # animte the view to provide hints on panning action
+    UIView.animate_with_block(0.3) do
+      frame = @view2.frame
+      frame.origin.x += 10
+    end
         
   end
   
