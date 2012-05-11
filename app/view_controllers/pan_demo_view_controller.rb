@@ -21,7 +21,7 @@ class PanDemoViewController < UIViewController
         
     panGesture = UIPanGestureRecognizer.alloc.initWithTarget self, action: "pan:"
     
-    self.view.gestureRecognizers += [panGesture]
+    self.view.addGestureRecognizer panGesture
         
   end
   
