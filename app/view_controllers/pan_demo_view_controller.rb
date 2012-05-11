@@ -25,10 +25,20 @@ class PanDemoViewController < UIViewController
     
     
     # animte the view to provide hints on panning action
-    UIView.animate_with_block(0.3) do
-      frame = @view2.frame
-      frame.origin.x += 10
-    end
+    UIView.animateWithDuration(0.24, 
+      animations: lambda{
+        frame = @view2.frame
+        frame.origin.x = 13
+        @view2.frame = frame  
+      }, 
+      completion: lambda { |finished|
+        UIView.animateWithDuration(0.24, 
+          animations: lambda{
+            frame = @view2.frame
+            frame.origin.x = 0
+            @view2.frame = frame  
+            })         
+      })
         
   end
   
